@@ -3,8 +3,12 @@
 # ~~~~
 
 # Web pages
-GET           /                          controllers.Application.index
+
 GET           /similarsShow              controllers.Application.similarsShow
+
+GET           /artistsShow               controllers.Application.artistsShow
+GET           /bubbles                   controllers.Application.bubbles
+GET           /map                       controllers.Application.map
 
 # Song
 POST          /song                      controllers.Application.newSong

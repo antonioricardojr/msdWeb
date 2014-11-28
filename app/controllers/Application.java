@@ -12,8 +12,11 @@ import play.db.jpa.Transactional;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.index;
+
 import views.html.similars;
+import views.html.artists;
+import views.html.bubbles;
+import views.html.map;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,12 +33,21 @@ public class Application extends Controller {
     private static ArtistDao artistDao = new ArtistDao();
     private static GenericDao<Long, Tag> tagDao = new GenericDao<>(Tag.class);
 
-    public static Result index() {
-        return ok(index.render());
-    }
 
     public static Result similarsShow() {
         return ok(similars.render());
+    }
+
+    public static Result artistsShow(){
+        return ok(artists.render());
+    }
+
+    public static Result map(){
+        return ok(map.render());
+    }
+
+    public static Result bubbles(){
+        return ok(bubbles.render());
     }
 
     @Transactional
